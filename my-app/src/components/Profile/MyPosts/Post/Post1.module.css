@@ -1,0 +1,38 @@
+.item {
+    margin-left: 100px;
+    margin-top: 50px;
+    font-size: 170%;
+    margin-bottom: 30px;
+
+}
+
+.item img {
+    width: 100px;
+    border-radius: 30px;
+}
+
+.names {
+    padding: 10px;
+    font-size: 40px
+}
+
+.message {
+    padding-left: 30px;
+
+}
+
+.like {
+    margin-top: 10px;
+}
+
+.button {
+    border-radius: 25px;
+    background-color: gray;
+    height: 30px;
+    font-family: -apple-system;
+}
+.share {
+    background-color: brown;
+    font-size: 25px;
+    font-family: -apple-system;
+}

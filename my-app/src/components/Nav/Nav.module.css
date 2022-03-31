@@ -1,0 +1,24 @@
+.item {
+    color: #dadada;
+}
+
+.nav {
+    border-top: 20px solid #dadada;
+    grid-area: n;
+    background-color: #102a33;
+    font-size: 200%;
+    font-family: Trebuchet MS, sans-serif;
+    padding-top: 50px;
+    padding-left: 10%;
+    box-shadow: 10px 4px 8px 0px rgba(255, 0, 0, 0.2);
+
+}
+
+
+.item a {
+    color:#dadada;
+    text-decoration: none;
+}
+.item a.active {
+    color:blue;
+}

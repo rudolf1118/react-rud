@@ -1,0 +1,22 @@
+.app-wrapper {
+    display: grid;
+    margin-left:1000px;
+    width: auto;
+    height: 1000px;
+    margin: 0 auto;
+    grid-template-areas:
+  "h h"
+  "n c";
+    grid-template-rows: 80px 1fr;
+    grid-template-columns: 2fr 10fr;
+    /*grid-gap: px;*/
+    font-family: Trebuchet MS, sans-serif;
+}
+
+.app-wrapper-content {
+    grid-area: c;
+    background-color: #dadada;
+
+}
+
+

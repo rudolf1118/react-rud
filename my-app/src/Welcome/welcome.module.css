@@ -1,0 +1,14 @@
+.Welcome {
+    text-align: center;
+    font-size: 90px;
+    font-family: Perpetua;
+    font-style: italic;
+}
+.Welcome img {
+    border-radius: 50px;
+}
+.item {
+    font-size:30px;
+    font-family: "Fira Sans";
+    font-style: normal;
+}
