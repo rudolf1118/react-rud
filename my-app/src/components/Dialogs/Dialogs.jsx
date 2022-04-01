@@ -9,19 +9,18 @@ import {addNewMessageTextActionCreator} from "../../redux/DialogsPage-reducer";
 
 const Dialogs=(props)=>{
 
-    let refElement=React.createRef()
-    let dialogsElements=props.state.dialogs.map(d=><DialogItem name={d.name} id={d.id}/>);
-    let messagesElements=props.state.messages.map(m=><Message message={m.message}/>);
-    let newerMessager=props.state.newerMessage
+    let state = props.dialogsPage;
+    let dialogsElements=state.dialogs.map(d=><DialogItem name={d.name} id={d.id}/>);
+    let messagesElements=state.messages.map(m=><Message message={m.message}/>);
+    let newerMessager=state.newerMessage
 
     let addPost=()=>{
-        props.dispatch(addMessageActionCreator());
-        console.log("TPUM EM HERIQA");
+        props.onAddPost()
     }
-    let onChange=()=>{
-        let messageVal=refElement.current.value;
-        let action=props.dispatch(addNewMessageTextActionCreator(messageVal));
-        props.dispatch(action);
+    let onChange=(e)=>{
+        let messageVal=e.target.value;
+        props.onChangeAt(messageVal);
+
     }
     return (
         <div className={classes.dialogs}>
@@ -35,7 +34,7 @@ const Dialogs=(props)=>{
             </div>
 
             <div className={classes.inputs}>
-                <input placeholder={"Enter the text..."} onChange={onChange} ref={refElement} value={newerMessager}
+                <input placeholder={"Enter the text..."} onChange={onChange} value={newerMessager}
                        className={classes.input}/> <br/>
                 <button onClick={addPost} className={classes.button}>Send</button>
             </div>
