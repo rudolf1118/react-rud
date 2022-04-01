@@ -1,20 +1,16 @@
 import React from "react";
 import classes from "./Post.module.css";
 import Post from "./Post/Post";
-import {addPostActionCreator} from "../../../redux/ProfilePage-reducer";
-import {addNewPostTextActionCreator} from "../../../redux/ProfilePage-reducer";
 
 
 const MyPosts=(props)=>{
-    let newPostText=props.newPostText
     let refElement=React.createRef();
-    let text=()=>{
-        props.dispatch(addPostActionCreator());
+    let onAddPost=()=>{
+        props.addPost();
     }
     let onChange=()=>{
         let textVal=refElement.current.value;
-        let action = props.dispatch(addNewPostTextActionCreator(textVal));
-        props.dispatch(action);
+        props.updateNewPostChange(textVal)
     };
 
     let postItem=props.posts.map(p=><Post like={p.like} message={p.message} name={p.name}/>)
@@ -24,10 +20,10 @@ const MyPosts=(props)=>{
         </div>
         <div>
             <input placeholder={"Enter the text..."} onChange={onChange} ref={refElement} className={classes.input} type={"text"}
-                   value={newPostText}/>
+                   value={props.newPostText}/>
         </div>
         <div>
-            <button onClick={text} className={classes.button}>Send Message</button>
+            <button onClick={onAddPost} className={classes.button}>Send Message</button>
         </div>
         <div className={classes.posts}>
             {postItem}

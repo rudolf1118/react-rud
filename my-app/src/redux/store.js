@@ -41,13 +41,13 @@ let store={
         sidebar: {}
     },
     getState() {
-        return this._state;
+        return this._state; // state's function
     },
     subscribe(observer) {
-        this._render=observer;
+        this._render=observer; // obs
     },
     _render() {
-        console.log('State changed')
+        console.log('State changed') // state
     },
     dispatch(action) {
         this._state.profilePage = profilePageReducer(this._state.profilePage, action);

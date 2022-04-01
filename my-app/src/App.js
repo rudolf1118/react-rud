@@ -11,6 +11,7 @@ import Welcome from "./Welcome/Welcome"
 import Found from "./Welcome/Found/Found";
 
 const App=(props)=>{
+    debugger
     return (
         <div className={"container"}>
             <div className="app-wrapper">
@@ -20,7 +21,7 @@ const App=(props)=>{
                     <Routes>
                         <Route path={""} element={<Welcome/>}/>
                         <Route path={"/profile"}
-                               element={<Profile state={props.state.profilePage} dispatch={props.dispatch}/>}/>
+                               element={<Profile store={props.store}/>}/>
                             <Route path={"/dialogs/*"} element={<Dialogs state={props.state.dialogsPage}  dispatch={props.dispatch}/>}/>
                         <Route path={"/news"} element={<News/>}/>
                         <Route path={"/music"} element={<Music/>}/>
