@@ -2,10 +2,6 @@ import React, {createRef} from "react";
 import classes from "./Dialogs.module.css"
 import DialogItem from "./DialogsItem/DialogsItem.jsx"
 import Message from "./Message/Message"
-import {addMessageActionCreator} from "../../redux/DialogsPage-reducer";
-import {addNewMessageTextActionCreator} from "../../redux/DialogsPage-reducer";
-
-
 
 const Dialogs=(props)=>{
 

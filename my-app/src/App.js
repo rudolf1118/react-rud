@@ -11,7 +11,7 @@ import Welcome from "./Welcome/Welcome"
 import Found from "./Welcome/Found/Found";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 
-const App=(props)=>{
+const  App=(props)=>{
     debugger
     return (
         <div className={"container"}>
@@ -22,8 +22,8 @@ const App=(props)=>{
                     <Routes>
                         <Route path={""} element={<Welcome/>}/>
                         <Route path={"/profile"}
-                               element={<Profile store={props.store}/>}/>
-                            <Route path={"/dialogs/*"} element={<DialogsContainer store={props.store}/>}/>
+                               element={<Profile/>}/>
+                            <Route path={"/dialogs/*"} element={<DialogsContainer/>}/>
                         <Route path={"/news"} element={<News/>}/>
                         <Route path={"/music"} element={<Music/>}/>
                         <Route path={"/*"} element={<Found/>}/>

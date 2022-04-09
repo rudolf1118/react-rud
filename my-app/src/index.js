@@ -4,12 +4,15 @@ import './index.css';
 import App from './App';
 import {BrowserRouter} from "react-router-dom";
 import store from "./redux/store";
+import StoreContext, {Provider} from "./StoreContext";
 
 let render=(state)=>{
     ReactDOM.render(
         <React.StrictMode>
             <BrowserRouter>
-                <App state={state} store={store} dispatch={store.dispatch.bind(store)}/>
+                <Provider store={store}>
+                <App />
+            </Provider>
             </BrowserRouter>
         </React.StrictMode>,
         document.getElementById('root')
